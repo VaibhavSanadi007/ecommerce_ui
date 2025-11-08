@@ -22,7 +22,7 @@ const Dashboard = () => {
   }
 
   const handleSellerProductUpdate = async ()=>{
-    const data = await axios.patch(`${prod_url}/api/products/update/${prodId}`,{
+    const data = await axios.patch(`${prod_url}api/products/update/${prodId}`,{
       title,
       priceAmount,
       description,
@@ -32,7 +32,7 @@ const Dashboard = () => {
   }
 
   const handleSellerProductDelete = async (prodId)=>{
-     await axios.delete(`${prod_url}/api/products/delete/${prodId}`,{withCredentials:true});
+     await axios.delete(`${prod_url}api/products/delete/${prodId}`,{withCredentials:true});
     dispatch(deleteSellerProducts(prodId));
   }
 
@@ -42,7 +42,7 @@ const Dashboard = () => {
   }
 
   const handleSellerProducts = async ()=>{
-   const data = await axios.get(`${prod_url}/api/products/seller`,{withCredentials:true});
+   const data = await axios.get(`${prod_url}api/products/seller`,{withCredentials:true});
    dispatch(addSellerProducts(data.data.data));
   }
 

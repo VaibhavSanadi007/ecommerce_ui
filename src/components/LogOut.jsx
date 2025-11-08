@@ -4,7 +4,7 @@ import { auth_url } from "../utils/Api"
 const LogOut = ({setLogoutFlag}) => {
 
   const handleLogout = async () => {
-    await axios.get(`${auth_url}/api/auth/logout`,{
+    await axios.get(`${auth_url}api/auth/logout`,{
       withCredentials:true
     }).then((data)=>{
       console.log(data)

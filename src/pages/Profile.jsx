@@ -28,7 +28,7 @@ const Profile = () => {
   }
 
   const handleAddAdress = async ()=>{
-    const data = await axios.post(`${auth_url}/api/auth/users/me/addresses`,{
+    const data = await axios.post(`${auth_url}api/auth/users/me/addresses`,{
       street,
       city,
       state,
@@ -43,7 +43,7 @@ const Profile = () => {
 
   
   const handleUserUpdate = async ()=>{
-  const data =  await axios.patch(`${auth_url}/api/auth/update`,{
+  const data =  await axios.patch(`${auth_url}api/auth/update`,{
      username,
       password,
       fullName: { firstName, lastName },

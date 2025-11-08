@@ -19,7 +19,7 @@ const SignIn = () => {
   const [role,setRole] = useState('');
 
   const handleSignUp = async ()=>{
-  const data =  await axios.post(`${auth_url}/api/auth/register`,{
+  const data =  await axios.post(`${auth_url}api/auth/register`,{
      username,
       email,
       password,
@@ -33,7 +33,7 @@ const SignIn = () => {
   }
 
   const handleSignIn = async ()=>{
-  const data =  await axios.post(`${auth_url}/api/auth/login`,{
+  const data =  await axios.post(`${auth_url}api/auth/login`,{
       email,
       password,
   },{withCredentials:true});

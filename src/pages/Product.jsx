@@ -14,7 +14,7 @@ const Product = () => {
   const [counter,setCounter] = useState(1);
 
    const handleGetProduct = async ()=>{
-    const {data} = await axios.get(`${prod_url}/api/products/${prodId}`,{withCredentials:true});
+    const {data} = await axios.get(`${prod_url}api/products/${prodId}`,{withCredentials:true});
     setProduct(data.product);
    }
 
