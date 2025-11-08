@@ -42,7 +42,7 @@ const Checkout = () => {
         pincode,
     }
     const data = await axios.post(
-      `/api/orders/`,{shippingAddress},
+      `/api/orders/create`,{shippingAddress},
       {
         withCredentials: true,
       }
