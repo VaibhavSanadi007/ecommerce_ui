@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { cart_url } from "../utils/Api";
 import { useDispatch } from "react-redux";
 import { deleteItemInCart, updateQuantityInCart } from "../context/CartSlice";
 const CartItems = ({cartData}) => {
@@ -9,16 +8,16 @@ const CartItems = ({cartData}) => {
   const dispatch = useDispatch();
 
   const handleAddQuantity = async (prodId)=>{
-    await axios.patch(`${cart_url}/api/cart/items/${prodId}`,{quantity: quantity+1},{withCredentials:true});
+    await axios.patch(`/api/cart/items/${prodId}`,{quantity: quantity+1},{withCredentials:true});
     dispatch(updateQuantityInCart({productId:prodId,quantity: quantity+1 }))
   }
   const handleSubQuantity = async (prodId)=>{
-    await axios.patch(`${cart_url}/api/cart/items/${prodId}`,{quantity: quantity-1},{withCredentials:true});
+    await axios.patch(`/api/cart/items/${prodId}`,{quantity: quantity-1},{withCredentials:true});
     dispatch(updateQuantityInCart({productId:prodId,quantity: quantity-1 }))
   }
 
   const handleRemoveCartItem = async (prodId)=>{
-    await axios.delete(`${cart_url}/api/cart/items/${prodId}`,{withCredentials:true});
+    await axios.delete(`/api/cart/items/${prodId}`,{withCredentials:true});
     dispatch(deleteItemInCart(prodId))
   }
 

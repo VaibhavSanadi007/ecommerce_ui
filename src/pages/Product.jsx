@@ -3,7 +3,6 @@ import ProductSidebar from "../components/ProductSidebar"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { cart_url, prod_url } from "../utils/Api";
 
 const Product = () => {
   const lenis = new Lenis();
@@ -14,7 +13,7 @@ const Product = () => {
   const [counter,setCounter] = useState(1);
 
    const handleGetProduct = async ()=>{
-    const {data} = await axios.get(`${prod_url}api/products/${prodId}`,{withCredentials:true});
+    const {data} = await axios.get(`/api/products/${prodId}`,{withCredentials:true});
     setProduct(data.product);
    }
 
@@ -34,7 +33,7 @@ const Product = () => {
    }
 
    const handleAddCartItem = async ()=>{
-    await axios.post(`${cart_url}/api/cart/items`,{
+    await axios.post(`/api/cart/items`,{
       productId: prodId,
       quantity: counter,
       url: product.images?.[0].url,

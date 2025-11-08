@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react'
 import Search from './components/Search'
 import { RiLogoutBoxLine } from "react-icons/ri";
 import LogOut from './components/LogOut'
-import { prod_url } from './utils/Api'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { addProducts } from './context/ProductsSlice'

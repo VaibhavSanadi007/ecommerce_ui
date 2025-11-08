@@ -3,7 +3,6 @@ import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { prod_url } from "../utils/Api";
 import { useDispatch, useSelector } from "react-redux";
 import { addSellerProducts, deleteSellerProducts, updateSellerProducts } from "../context/SellerProductsSlice";
 const Dashboard = () => {
@@ -22,7 +21,7 @@ const Dashboard = () => {
   }
 
   const handleSellerProductUpdate = async ()=>{
-    const data = await axios.patch(`${prod_url}api/products/update/${prodId}`,{
+    const data = await axios.patch(`/api/products/update/${prodId}`,{
       title,
       priceAmount,
       description,
@@ -32,7 +31,7 @@ const Dashboard = () => {
   }
 
   const handleSellerProductDelete = async (prodId)=>{
-     await axios.delete(`${prod_url}api/products/delete/${prodId}`,{withCredentials:true});
+     await axios.delete(`/api/products/delete/${prodId}`,{withCredentials:true});
     dispatch(deleteSellerProducts(prodId));
   }
 
@@ -42,7 +41,7 @@ const Dashboard = () => {
   }
 
   const handleSellerProducts = async ()=>{
-   const data = await axios.get(`${prod_url}api/products/seller`,{withCredentials:true});
+   const data = await axios.get(`/api/products/seller`,{withCredentials:true});
    dispatch(addSellerProducts(data.data.data));
   }
 

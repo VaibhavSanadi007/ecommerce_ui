@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { cart_url } from "../utils/Api";
 
 const ProductCard = ({item}) => {
     const navigate = useNavigate();
@@ -12,7 +11,7 @@ const ProductCard = ({item}) => {
    }
 
      const handleAddCartItem = async ()=>{
-    await axios.post(`${cart_url}/api/cart/items`,{
+    await axios.post(`/api/cart/items`,{
       productId: item._id,
       quantity: 1,
       url:  item.images?.[0].url,

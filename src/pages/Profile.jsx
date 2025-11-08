@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom"
-import { auth_url } from "../utils/Api";
 import { addaddress, updateuser } from "../context/UserSlice";
 
 const Profile = () => {
@@ -28,7 +27,7 @@ const Profile = () => {
   }
 
   const handleAddAdress = async ()=>{
-    const data = await axios.post(`${auth_url}api/auth/users/me/addresses`,{
+    const data = await axios.post(`/api/auth/users/me/addresses`,{
       street,
       city,
       state,
@@ -43,7 +42,7 @@ const Profile = () => {
 
   
   const handleUserUpdate = async ()=>{
-  const data =  await axios.patch(`${auth_url}api/auth/update`,{
+  const data =  await axios.patch(`/api/auth/update`,{
      username,
       password,
       fullName: { firstName, lastName },

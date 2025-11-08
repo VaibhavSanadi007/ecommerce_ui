@@ -1,5 +1,5 @@
 import axios from "axios";
-import { payment_url, razorpay_key_id } from "../utils/Api";
+import { razorpay_key_id } from "../utils/Api";
 import { useNavigate } from "react-router-dom";
 
 function PaymentButton({orderId}) {
@@ -7,7 +7,7 @@ function PaymentButton({orderId}) {
   const handlePayment = async () => {
     try {
       // Step 1: Create order on backend
-      const { data } = await axios.post(`${payment_url}/api/payments/create/${orderId}`, {},{withCredentials:true});
+      const { data } = await axios.post(`/api/payments/create/${orderId}`, {},{withCredentials:true});
       const {payment} = data;
       console.log("Payment:",payment);
       // Step 2: Razorpay options
@@ -22,7 +22,7 @@ function PaymentButton({orderId}) {
           const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response;
           console.log(response);
           try {
-            await axios.post(`${payment_url}/api/payments/verify`, {
+            await axios.post(`/api/payments/verify`, {
               razorpayOrderId: razorpay_order_id,
               paymentId: razorpay_payment_id,
               signature: razorpay_signature,

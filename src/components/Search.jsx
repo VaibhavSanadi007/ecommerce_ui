@@ -2,7 +2,6 @@ import { CiSearch } from "react-icons/ci";
 import SearchProducts from "./SearchProducts";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { prod_url } from "../utils/Api";
 
 const Search = ({setSearchFlag}) => {
   const [query,setQuery] = useState('');

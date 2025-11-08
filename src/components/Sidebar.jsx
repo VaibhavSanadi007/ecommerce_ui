@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { prod_url } from "../utils/Api";
 import { useDispatch } from "react-redux";
 import { addProducts } from "../context/ProductsSlice";
 const Sidebar = () => {

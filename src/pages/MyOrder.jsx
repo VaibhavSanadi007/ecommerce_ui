@@ -1,6 +1,4 @@
 import axios from "axios"
-import OrderItems from "../components/OrderItems"
-import { order_url } from "../utils/Api"
 import { useEffect, useState } from "react"
 import { RiDeleteBin6Line } from "react-icons/ri"
 import { useNavigate } from "react-router-dom"
@@ -9,13 +7,13 @@ const MyOrder = () => {
    const [orderData,setOrderData] = useState([]);
   const [deleteOrderFlag,setDeleteOrderFlag] = useState(false);
   const handleGetMyOrders = async ()=>{
-    const data = await axios.get(`${order_url}/api/orders/me`,{withCredentials:true});
+    const data = await axios.get(`/api/orders/me`,{withCredentials:true});
     setOrderData(data.data.orders);
     console.log(data.data.orders)
   }
 
   const handleDeleteMyOrder = async (orderId)=>{
-     await axios.post(`${order_url}/api/orders/${orderId}/cancel`,{},{withCredentials:true});
+     await axios.post(`/api/orders/${orderId}/cancel`,{},{withCredentials:true});
     navigate('/');
   }
 

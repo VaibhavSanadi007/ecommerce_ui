@@ -2,7 +2,6 @@ import { data, useNavigate } from "react-router-dom"
 import CartItems from "./CartItems"
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { cart_url } from "../utils/Api";
 import { addCartItems } from "../context/CartSlice";
 import { useEffect } from "react";
 
@@ -19,7 +18,7 @@ const Cart = ({setCartFlag}) => {
   }
 
   const handleAddCartItems = async ()=>{
-    const data = await axios.get(`${cart_url}/api/cart`,{withCredentials:true});
+    const data = await axios.get(`/api/cart`,{withCredentials:true});
     dispatch(addCartItems(data.data));
   }
 

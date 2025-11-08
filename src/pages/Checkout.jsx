@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { order_url, payment_url } from "../utils/Api";
 import { useNavigate } from "react-router-dom";
 import PaymentButton from "../services/PaymentButton";
 
@@ -23,7 +22,7 @@ const Checkout = () => {
   const [orderId,setOrderId] = useState('');
 
   const handlePaymentButton = ()=>{
-    axios.post(`${payment_url}/api/payments/create/${orderId}`,{},{withCredentials:true});
+    axios.post(`/api/payments/create/${orderId}`,{},{withCredentials:true});
   }
 
   const handleAddressBox = () => {
@@ -43,7 +42,7 @@ const Checkout = () => {
         pincode,
     }
     const data = await axios.post(
-      `${order_url}/api/orders`,{shippingAddress},
+      `/api/orders`,{shippingAddress},
       {
         withCredentials: true,
       }

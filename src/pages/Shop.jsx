@@ -3,7 +3,6 @@ import ShopProductCard from "../components/ShopProductCard"
 import Sidebar from "../components/Sidebar"
 import Lenis from "lenis";
 import axios from "axios";
-import { prod_url } from "../utils/Api";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../context/ProductsSlice";
 
@@ -15,8 +14,6 @@ const Shop = () => {
   const lenis = new Lenis();
   const prodData = useSelector((item)=> item.prod.value);
   const dispatch = useDispatch();
-
-  
 
   useEffect(()=>{
     if(lenis){

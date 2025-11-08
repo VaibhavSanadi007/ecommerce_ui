@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { TfiUpload } from "react-icons/tfi";
-import { prod_url } from "../utils/Api";
 import { useNavigate } from "react-router-dom";
 const Create = () => {
   const navigate  = useNavigate();

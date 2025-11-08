@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react"
-import { auth_url } from "../utils/Api";
 import { useDispatch } from "react-redux";
 import { adduser } from "../context/UserSlice";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +18,7 @@ const SignIn = () => {
   const [role,setRole] = useState('');
 
   const handleSignUp = async ()=>{
-  const data =  await axios.post(`${auth_url}api/auth/register`,{
+  const data =  await axios.post(`/api/auth/register`,{
      username,
       email,
       password,
@@ -33,7 +32,7 @@ const SignIn = () => {
   }
 
   const handleSignIn = async ()=>{
-  const data =  await axios.post(`${auth_url}api/auth/login`,{
+  const data =  await axios.post(`/api/auth/login`,{
       email,
       password,
   },{withCredentials:true});
