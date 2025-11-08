@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+
+.animate-slide{
+
+  animation: slide 15s ease-in  infinite;
+
+}
+
+@keyframes slide {
+  0%, 25% {
+    transform: translateX(0%);
+  }
+
+  33%, 58% {
+    transform: translateX(-100%);
+  }
+
+  66%, 91% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-slide:hover{
+  animation-play-state: paused;
+}
+
+.product-hover{
+  transition: all 2s ease;
+}
+
+
+
+.scroll-hide {
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
+  overflow: auto;
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none; 
+}
+
+[data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
