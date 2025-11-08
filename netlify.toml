@@ -3,3 +3,9 @@
   to = "http://nova-alb-47947097.ap-south-1.elb.amazonaws.com/api/:splat/"
   status = 200
   force = true
+
+[[redirects]]
+from = "/api/orders"
+to = "https://nova-alb-47947097.ap-south-1.elb.amazonaws.com/api/:splat"
+status = 200
+force = true
