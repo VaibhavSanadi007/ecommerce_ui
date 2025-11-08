@@ -21,7 +21,7 @@ const App = () => {
     const dispatch = useDispatch();
 
   const handleGetProducts = async ()=>{
-  const data = await axios.get(`${prod_url}api/products`,{withCredentials:true});
+  const data = await axios.get(`/api/products`,{withCredentials:true});
   dispatch(addProducts(data.data.data));
   }
 

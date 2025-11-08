@@ -9,7 +9,7 @@ const Search = ({setSearchFlag}) => {
   const [resutArr,setResultArr] = useState([]);
 
   const handleSearchQuery = async ()=>{
-    const data = await axios.get(`${prod_url}api/products?q=${query}`,{withCredentials:true});
+    const data = await axios.get(`/api/products?q=${query}`,{withCredentials:true});
     setResultArr(data.data.data);
   }
 

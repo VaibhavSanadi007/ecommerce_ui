@@ -28,7 +28,7 @@ const Create = () => {
     formdata.append('images', file);
   });
 
-  await axios.post(`${prod_url}api/products`,formdata,{withCredentials:true});
+  await axios.post(`/api/products`,formdata,{withCredentials:true});
   navigate('/shop');
   }
 

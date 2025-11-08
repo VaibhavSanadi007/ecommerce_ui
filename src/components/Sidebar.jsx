@@ -22,7 +22,7 @@ const Sidebar = () => {
       types.forEach((t) => params.append("types", t));
     }
 
-    const data = await axios.get(`${prod_url}api/products?${params.toString()}`,{withCredentials:true});
+    const data = await axios.get(`/api/products?${params.toString()}`,{withCredentials:true});
     dispatch(addProducts(data.data.data));
   }
 
