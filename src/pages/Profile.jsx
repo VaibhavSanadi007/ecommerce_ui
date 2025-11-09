@@ -16,11 +16,11 @@ const Profile = () => {
 
   const [addressFlag,setAddressFlag] = useState(false);
 
-  const [street,setStreet] = useState(userData.addresses?.street || '');
-  const [city,setcity] = useState(userData.addresses?.city || '');
-  const [state,setState] = useState(userData.addresses?.state || '');
-  const [country,setCountry] = useState(userData.addresses?.country || '');
-  const [pincode,setPincode] = useState(userData.addresses?.pincode || 0);
+  const [street,setStreet] = useState(userData.addresses?.[0].street || '');
+  const [city,setcity] = useState(userData.addresses?.[0].city || '');
+  const [state,setState] = useState(userData.addresses?.[0].state || '');
+  const [country,setCountry] = useState(userData.addresses?.[0].country || '');
+  const [pincode,setPincode] = useState(userData.addresses?.[0].pincode || 0);
 
   const handleHomeNav = ()=>{
     navigate('/');
