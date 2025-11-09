@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import PaymentButton from "../services/PaymentButton";
@@ -50,6 +50,15 @@ const Checkout = () => {
     setOrderId(data.data.order._id);
     setPaymentFlag(true);
   };
+
+  const responsecheck = async ()=>{
+    const data = await axios.get(`/api/orders/gg`,{withCredentials:true});
+    console.log(data);
+  }
+
+  useEffect(()=>{
+    responsecheck();
+  },[]);
 
   return (
     <div className="xl:px-80 md:px-20 lg:px-40 xl:py-5 font-light">
