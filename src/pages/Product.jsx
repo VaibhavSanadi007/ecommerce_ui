@@ -47,12 +47,12 @@ const Product = () => {
       lenis.scrollTo(0,{immediate:true});
     },[]);
   return (
-    <div className=" md:flex justify-center font-light lg:py-10 xl:py-10 ">
+    <div className=" md:flex  items-center gap-5 md:px-5 font-light md:py-10 xl:py-10 xl:px-60  ">
 
-      <div className="px-3 xl:px-0">
-        <img className="h-100 lg:h-80 xl:h-120  xl:w-110 object-contain" src={product.images?.[index]?.url} alt="" />
+      <div className="md:h-210 md:w-[50%]  xl:px-0 flex flex-col items-center ">
+        <img className="h-100    lg:h-80 xl:h-120  xl:w-110 object-contain" src={product.images?.[index]?.url} alt="" />
 
-        <div className="flex items-center gap-3 lg:h-20 xl:h-20 ">
+        <div className="flex items-center justify-center gap-3 lg:h-20 xl:h-20 ">
           {
             product.images && product.images.map((items,index)=>(
               <img key={index} className="h-15 w-15 xl:h-15 xl:w-15 object-cover" src={items.url} onClick={()=>handleMainImg(index)} />
@@ -63,9 +63,9 @@ const Product = () => {
 
        <p className="">{product.description}</p>
 
-      </div>
+      </div>  
 
-      <div className="px-5 mt-5 md:mt-10 lg:mt-0 xl:mt-0 xl:px-10 flex flex-col gap-10 xl:gap-15">
+      <div className="md:h-210 md:w-[50%]  mt-5 md:mt-0  flex flex-col gap-10 xl:gap-15 ">
       <h1 className="text-3xl">{product?.title}</h1>
       <h1>&#8377;{product.price?.amount}.00</h1>
       <div>
@@ -80,7 +80,7 @@ const Product = () => {
             </div>
       </div>
 
-<div className="flex flex-col gap-5">
+<div className="flex flex-col gap-5 ">
       <button className="xl:h-10 w-75 border flex flex-col items-center justify-center  group cursor-pointer " onClick={handleAddCartItem}>
         Add to Cart
         <div className="relative w-21 h-0.5  overflow-hidden">

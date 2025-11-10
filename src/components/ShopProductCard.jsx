@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const ShopProductCard = ({items}) => {
+  console.log(items)
 const [hover, setHover] = useState(false);
 
   const navigate = useNavigate();
