@@ -3,6 +3,7 @@ import ProductSidebar from "../components/ProductSidebar"
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const lenis = new Lenis();
@@ -45,10 +46,12 @@ const Product = () => {
    }
 
    const handleBuyNow = async ()=>{
-    const data = await handleAddCartItem();
-    if(data){
+     await handleAddCartItem().then(()=>{
       Navigate('/viewcart');
-    }
+     }).catch(()=>{
+      toast.error("Please use cart, Buy Now is broken.")
+     })
+    
    }
 
     useEffect(()=>{
