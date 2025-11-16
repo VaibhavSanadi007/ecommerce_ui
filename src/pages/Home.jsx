@@ -44,7 +44,7 @@ const Home = () => {
         <button className="xl:h-10 xl:px-10 border transition-all duration-300 hover:bg-blue-300 hover:text-white cursor-pointer " onClick={handleHomeNav}>Shop All</button>
       </div>
 
-      <div className="h-30 flex justify-evenly gap-5 my-5 ">
+      <div className="h-30 flex justify-evenly gap-5 my-8 ">
         <div className="h-full flex flex-col justify-evenly items-center">
           <div className="flex items-center justify-center "><LiaShippingFastSolid size={30} /></div>
           <h1 className="text-center font-semibold  w-[80%] text-[0.9rem] ">Free Shipping</h1>

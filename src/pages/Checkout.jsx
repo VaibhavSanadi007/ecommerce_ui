@@ -9,11 +9,11 @@ const Checkout = () => {
   const userData = useSelector((item) => item.user.value);
   const cartData = useSelector((item) => item.cart.value);
   
-  const [street, setStreet] = useState(userData.addresses?.[0].street || "");
-  const [city, setcity] = useState(userData.addresses?.[0].city || "");
-  const [state, setState] = useState(userData.addresses?.[0].state || "");
-  const [country, setCountry] = useState(userData.addresses?.[0].country || "");
-  const [pincode, setPincode] = useState(userData.addresses?.[0].pincode || 0);
+  const [street, setStreet] = useState(userData.addresses?.[0]?.street || "");
+  const [city, setcity] = useState(userData.addresses?.[0]?.city || "");
+  const [state, setState] = useState(userData.addresses?.[0]?.state || "");
+  const [country, setCountry] = useState(userData.addresses?.[0]?.country || "");
+  const [pincode, setPincode] = useState(userData.addresses?.[0]?.pincode || 0);
 
   const [paymentFlag,setPaymentFlag] = useState(false);
 
