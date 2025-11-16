@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import PaymentButton from "../services/PaymentButton";
+import { toast } from "react-toastify";
 
 const Checkout = () => {
 
@@ -19,8 +20,6 @@ const Checkout = () => {
 
   const [orderId,setOrderId] = useState('');
 
- 
-
   const handleAddressBox = () => {
     setAddressFlag(true);
   };
@@ -30,6 +29,10 @@ const Checkout = () => {
   };
 
   const handleOrder = async () => {
+    if(street.length == 0 || city.length == 0 || state.length == 0 || country.length == 0 || !pincode){
+      toast.info("please provide your desired address✨");
+      return;
+    }
     const shippingAddress = {
        street,
         city,
@@ -46,10 +49,6 @@ const Checkout = () => {
     setOrderId(data.data.order._id);
     setPaymentFlag(true);
   };
-
-
-
-
 
   return (
     <div className="xl:px-80 md:px-20 lg:px-40 xl:py-5 font-light">

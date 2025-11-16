@@ -11,6 +11,7 @@ import LogOut from './components/LogOut'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { addProducts } from './context/ProductsSlice'
+import { toast, ToastContainer } from 'react-toastify'
 
 
 const App = () => {
@@ -43,6 +44,14 @@ const App = () => {
     touchMultiplier: 1.2, 
   }}
 >
+  <ToastContainer position="top-right"
+  autoClose={2000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  pauseOnHover
+  draggable
+  theme="colored"/>
       {cartFlag && <Cart setCartFlag={setCartFlag} cartFlag={cartFlag} />}
      {searchFlag && <Search setSearchFlag={setSearchFlag}/>}
      <RiLogoutBoxLine size={35} className='fixed z-1 bottom-7 left-10 text-black/70 active:scale-95' onClick={()=>setLogoutFlag(true)}  />

@@ -42,6 +42,11 @@ const Product = () => {
     },{withCredentials:true});
    }
 
+   const handleBuyNow = async ()=>{
+    await handleAddCartItem();
+    Navigate('/viewcart');
+   }
+
     useEffect(()=>{
       handleGetProduct();
       lenis.scrollTo(0,{immediate:true});
@@ -55,7 +60,7 @@ const Product = () => {
         <div className="flex items-center justify-center gap-3 lg:h-20 xl:h-20 ">
           {
             product.images && product.images.map((items,index)=>(
-              <img key={index} className="h-15 w-15 xl:h-15 xl:w-15 object-cover" src={items.url} onClick={()=>handleMainImg(index)} />
+              <img key={index} className="h-15 w-15 xl:h-15 xl:w-15 object-cover" src={items?.url} onClick={()=>handleMainImg(index)} />
             ))
           }
  
@@ -88,7 +93,7 @@ const Product = () => {
         </div>
       </button>
 
-      <button className="h-10 xl:h-10 w-75 border flex flex-col items-center justify-center  group cursor-pointer bg-black text-white " >
+      <button className="h-10 xl:h-10 w-75 border flex flex-col items-center justify-center  group cursor-pointer bg-black text-white " onClick={handleBuyNow} >
         Buy Now
       </button>
 
