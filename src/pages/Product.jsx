@@ -1,11 +1,13 @@
 import Lenis from "lenis";
 import ProductSidebar from "../components/ProductSidebar"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Product = () => {
   const lenis = new Lenis();
+  const Navigate = useNavigate();
+
   const {prodId} = useParams();
 
   const [product,setProduct] = useState({});
