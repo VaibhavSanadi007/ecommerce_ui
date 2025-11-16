@@ -45,8 +45,10 @@ const Product = () => {
    }
 
    const handleBuyNow = async ()=>{
-    await handleAddCartItem();
-    Navigate('/viewcart');
+    const data = await handleAddCartItem();
+    if(data){
+      Navigate('/viewcart');
+    }
    }
 
     useEffect(()=>{
