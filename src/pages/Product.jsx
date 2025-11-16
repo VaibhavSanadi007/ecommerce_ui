@@ -46,12 +46,12 @@ const Product = () => {
    }
 
    const handleBuyNow = async ()=>{
-     await handleAddCartItem().then(()=>{
-      Navigate('/viewcart');
-     }).catch(()=>{
-      toast.error("Please use cart, Buy Now is broken.")
-     })
-    
+    //  await handleAddCartItem().then(()=>{
+    //   Navigate('/viewcart');
+    //  }).catch(()=>{
+    //   toast.error("Please use cart, Buy Now is broken.")
+    //  })
+    toast.info('plz use add to cart !!')
    }
 
     useEffect(()=>{
