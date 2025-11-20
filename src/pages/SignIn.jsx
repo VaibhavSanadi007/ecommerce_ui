@@ -12,9 +12,9 @@ const SignIn = () => {
 
   const [firstName,setFirstName] = useState('');
   const [lastName,setLastName] = useState('');
-  const [email,setEmail] = useState('user@gmail.com');
+  const [email,setEmail] = useState('');
   const [username,setUsername] = useState('');
-  const [password,setPassword] = useState('User@123');
+  const [password,setPassword] = useState('');
   const [role,setRole] = useState('');
 
   const handleSignUp = async ()=>{
@@ -45,7 +45,7 @@ const SignIn = () => {
       
       <div className="flex items-center justify-center xl:h-30  ">
         <div className="w-full xl:h-1 border-t border-t-gray-300 " />
-        <h1 className="xl:w-130 w-200 xl:text-xl font-light text-gray-500 text-center">Sign In</h1>
+        <h1 className="xl:w-130 w-200 xl:text-xl font-light text-gray-500 text-center">{signFlag ? 'Sign Up' :'Sign In '}</h1>
         <div className="w-full xl:h-1 border-t border-t-gray-300"/>
       </div>
 
