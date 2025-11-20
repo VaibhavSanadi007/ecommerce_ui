@@ -1,13 +1,16 @@
 import axios from "axios"
+import { useDispatch } from "react-redux"
+import { adduser } from "../context/UserSlice";
 
 const LogOut = ({setLogoutFlag}) => {
+  const disptach = useDispatch();
 
   const handleLogout = async () => {
     await axios.get(`/api/auth/logout`,{
       withCredentials:true
     }).then((data)=>{
-      console.log(data)
       setLogoutFlag(false);
+      disptach(adduser({}));
     })
   }
 
